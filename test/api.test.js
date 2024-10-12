@@ -1,6 +1,48 @@
 const {describe, it, expect} = require('@jest/globals')
 const ServiceApi = require('../src/services/api')
 
+describe("Testando função Operações", () => {
+
+    it("ditando um número positivo", () => {
+
+        const result = ServiceApi.Operacao(1)
+
+        expect(result).toStrictEqual([
+            "Soma: Soma dois números", 
+            "Subtração: Subtrai dois números", 
+            "Multiplicação: Multiplica dois números", 
+            "Divisão: Divide dois números", 
+            "Potenciação = Multplica um número por ele mesmo um determinado número de vezes", 
+            "Radiciação = Define a raíz de um determinado número"
+        ])
+
+    })
+
+    it("ditando um número negativo", () => {
+
+        const result = ServiceApi.Operacao(-1)
+
+        expect(result).toStrictEqual([
+            "Soma: Soma dois números", 
+            "Subtração: Subtrai dois números", 
+            "Multiplicação: Multiplica dois números", 
+            "Divisão: Divide dois números", 
+            "Potenciação = Multplica um número por ele mesmo um determinado número de vezes", 
+            "Radiciação = Define a raíz de um determinado número"
+        ])
+
+    })
+
+    it("ditando uma letra", () => {
+
+        const result = () => ServiceApi.Operacao("a")
+
+        expect(result).toThrow("Utilize apenas números")
+
+    })
+
+})
+
 describe("Testando função Soma", () => {
 
     it("somando dois números positivos", () => {
