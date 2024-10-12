@@ -69,6 +69,54 @@ describe("Testando função Soma", () => {
 
     })
 
+    it("somando 1 número negativo e 1 positivo", () => {
+
+        const result = ServiceApi.Soma(-1, 2)
+
+        expect(result).toBe(1)
+
+    })
+
+    it("somando 1 número inteiro com 1 número com vírgula", () => {
+
+        const result = ServiceApi.Soma(1, 2.25)
+
+        expect(result).toBe(3.25)
+
+    })
+
+    it("somando 2 números com vírgula", () => {
+
+        const result = ServiceApi.Soma(2.25, 2.25)
+
+        expect(result).toBe(4.5)
+
+    })
+
+    it("somando 1 número inteiro negativo com 1 número com vírgula", () => {
+
+        const result = ServiceApi.Soma(-1, 2.25)
+
+        expect(result).toBe(1.25)
+
+    })
+
+    it("somando 1 número inteiro negativo com 1 número negativo com vírgula", () => {
+
+        const result = ServiceApi.Soma(-1, -2.25)
+
+        expect(result).toBe(-3.25)
+
+    })
+
+    it("somando 2 números negativos com vírgula", () => {
+
+        const result = ServiceApi.Soma(-1.75, -2.25)
+
+        expect(result).toBe(-4)
+
+    })
+
     it("somando 1 número e uma letra", () => {
 
         const result = () => ServiceApi.Soma(1, "a")
